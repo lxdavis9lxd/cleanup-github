@@ -205,7 +205,11 @@ function RepositoryList({ token, onLogout }) {
                     <span className="repo-description">{repo.description}</span>
                   )}
                   <span className="repo-meta">
-                    ⭐ {repo.stargazers_count} | 🍴 {repo.forks_count} | Updated: {new Date(repo.updated_at).toLocaleDateString()}
+                    <span aria-label={`${repo.stargazers_count} stars`}>⭐ {repo.stargazers_count}</span>
+                    {' | '}
+                    <span aria-label={`${repo.forks_count} forks`}>🍴 {repo.forks_count}</span>
+                    {' | '}
+                    Updated: {new Date(repo.updated_at).toLocaleDateString()}
                   </span>
                 </div>
               </label>
